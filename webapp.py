@@ -24,3 +24,13 @@ def render_main():
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
+def total_rate(states):
+    print("RunningRate")
+    points = float(0)
+    total = float(0)
+    for state in states:
+        if state["State"] == state:
+            total = total + state["Total"]["Rate"]
+            points=points + 1
+    avg = float(total//points)
+    return avg
