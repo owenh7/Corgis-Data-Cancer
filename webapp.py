@@ -34,3 +34,6 @@ def total_rate(states):
             points=points + 1
     avg = float(total//points)
     return avg
+
+if __name__ == "__main__":
+    app.run(debug=True)
