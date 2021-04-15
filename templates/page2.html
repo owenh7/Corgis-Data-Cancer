@@ -5,5 +5,15 @@
 {% block title %}State Death Rates{% endblock %}
 
 {% block content %}
-    
+    <title>State Death Rates</title>
+<h1>Cancer Database</h1>
+<p>Enter your state and receive cancer mortality rates</p>
+<form action="/">
+  <label for="States">Choose a State:</label>
+  <select name="states">
+    {{states}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
 {% endblock %}
