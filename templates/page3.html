@@ -5,5 +5,80 @@
 {% block title %}State Total Death Rates{% endblock %}
 
 {% block content %}
-   
+   <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Total Rates"
+	},
+	axisY: {
+		title: "Cancer Deaths"
+	},
+	data: [{        
+		type: "column",  
+		dataPoints: [      
+			{ y: 71529, label: "Alabama" },
+			{ y: 6361,  label: "Alaska" },
+			{ y: 74286,  label: "Arizona" },
+			{ y: 45627.0,  label: "Arkansas" },
+			{ y: 393980.0,  label: "California" },
+			{ y: 49035.0, label: "Colorado" },
+			{ y: 47567.0,  label: "Connecticut" },
+			{ y: 13233.0,  label: "Delaware" },
+          	{ y: 7730.0,  label: "District of Columbia" },
+            { y: 289905.0,  label: "Florida" },
+         	{ y: 108222.0,  label: "Georgia" },
+        	{ y: 15812.0,  label: "Hawaii" },
+          	{ y: 17756.0,  label: "Idaho" },
+            { y: 169730.0,  label: "Illinois" },
+            { y: 91978.0,  label: "Indiana" },
+            { y: 44835.0,  label: "Iowa" },
+            { y: 37644.0,  label: "Kansas" },
+            { y: 68675.0,  label: "Kentucky" },
+            { y: 64194.0,  label: "Louisiana" },
+            { y: 22240.0,  label: "Maine" },
+            { y: 72603.0,  label: "Maryland" },
+            { y: 90756.0,  label: "Massachusetts" },
+            { y: 142458.0,  label: "Michigan" },
+            { y: 66328.0,  label: "Minnesota" },
+            { y: 43874.0,  label: "Mississippi" },
+            { y: 88348.0,  label: "Missouri" },
+            { y: 13593.0,  label: "Montana" },
+            { y: 23977.0,  label: "Nebraska" },
+            { y: 31758.0,  label: "Nevada" },
+            { y: 18256.0,  label: "New Hampshire" },
+            { y: 116836.0,  label: "New Jersey" },
+            { y: 23425.0,  label: "New Mexico" },
+            { y: 248572.0,  label: "New York" }, 
+            { y: 125783.0,  label: "North Carolina" },
+            { y: 8990.0,  label: "North Dakota" },
+            { y: 175847.0,  label: "Ohio" },
+            { y: 54930.0,  label: "Oklahoma" },
+            { y: 53430.0,  label: "Oregon" }, 
+            { y: 202230.0,  label: "Pennsylvania" },
+            { y: 15570.0,  label: "Rhode Island" },
+            { y: 65561.0,  label: "South Carolina" },
+            { y: 11212.0,  label: "South Dakota" },
+            { y: 94678.0,  label: "Tennessee" }, 
+            { y: 257000.0,  label: "Texas" },
+            { y: 19022.0,  label: "Utah" },
+            { y: 9261.0,  label: "Vermont" },
+            { y: 99278.0,  label: "Virginia" }, 
+            { y: 82864.0,  label: "Washington" },
+            { y: 32950.0,  label: "West Virginia" },
+            { y: 78578.0,  label: "Wisconsin" },
+            { y: 6603.0,  label: "Wyoming" },
+         
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 {% endblock %}
