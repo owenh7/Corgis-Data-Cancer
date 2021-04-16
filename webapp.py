@@ -27,7 +27,7 @@ def render_first():
     elif 'states' not in request.args:
         return render_template('page2.html', states = get_state_options(states))
     def get_state_options(states):
-    states = []
+        states = []
     print("RunningOP")
     for data in states:
         if data["State"] not in states:
