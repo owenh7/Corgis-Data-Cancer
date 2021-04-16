@@ -14,10 +14,10 @@ def render_main():
 def render_first():
     return render_template('page1.html')
 @app.route("/p2")
-def render_first():
+def render_first2():
     return render_template('page2.html')
 @app.route("/p3")
-def render_first():
+def render_first3():
     return render_template('page3.html')
 
 
