@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   
-  <title>Home Page</title>
+  <title>{% block title %}{% endblock %} - Home Page</title>
   
   </head>
   <body>
@@ -34,7 +34,7 @@
       </div>  
     </nav>
     
-   
+   {% block title %}{% endblock %}
     
   </body>
 </html>
