@@ -13,7 +13,7 @@ def render_main():
         
 
         
-        if 'states' in request.args:
+    if 'states' in request.args:
         return render_template('page2.html', states = get_state_options(states), total_rate = total_rate(request.args['states']))
 
     def get_state_options(states):
