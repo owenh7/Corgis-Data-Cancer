@@ -15,7 +15,8 @@ def render_main():
         
     if 'states' in request.args:
         return render_template('page2.html', states = get_state_options(states), total_rate = total_rate(request.args['states']))
-
+    elif 'states' not in request.args
+        return render_template('page2.html', states = get_state_options(states))
     def get_state_options(states):
     states = []
     print("RunningOP")
