@@ -4,18 +4,6 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/p1")
-def render_main():
-    return render_template('page1.html')
-
-@app.route("/p2")
-def render_main():
-    return render_template('page2.html')
-
-@app.route("/p3")
-def render_main():
-    return render_template('page3.html')
-
 
 @app.route("/")
 def render_main():
