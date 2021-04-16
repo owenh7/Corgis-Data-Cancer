@@ -4,12 +4,6 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
-def render_main():
-    print("RunningMain")
-    with open('cancer.json') as cancer_data:
-        states = json.load(cancer_data)
-        
 @app.route("/p1")
 def render_main():
     return render_template('page1.html')
@@ -21,6 +15,15 @@ def render_main():
 @app.route("/p3")
 def render_main():
     return render_template('page3.html')
+
+
+@app.route("/")
+def render_main():
+    print("RunningMain")
+    with open('cancer.json') as cancer_data:
+        states = json.load(cancer_data)
+        
+
         
         if 'states' in request.args:
         return render_template('page2.html', states = get_state_options(states), total_rate = total_rate(request.args['states']))
