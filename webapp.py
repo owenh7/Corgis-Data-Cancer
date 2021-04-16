@@ -10,6 +10,18 @@ def render_main():
     with open('cancer.json') as cancer_data:
         states = json.load(cancer_data)
         
+@app.route("/p1")
+def render_main():
+    return render_template('page1.html')
+
+@app.route("/p2")
+def render_main():
+    return render_template('page2.html')
+
+@app.route("/p3")
+def render_main():
+    return render_template('page3.html')
+        
         if 'states' in request.args:
         return render_template('page2.html', states = get_state_options(states), total_rate = total_rate(request.args['states']))
 
