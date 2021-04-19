@@ -24,14 +24,14 @@ def render_first3():
 
         
 if 'states' in request.args:
-    return render_template('page2.html', states = get_state_options(counties))
+    return render_template('page2.html', states = get_state_options(state))
 elif 'states' not in request.args:
-    return render_template('page2.html', states = get_state_options(counties))
+    return render_template('page2.html', states = get_state_options(state))
 
-def get_state_options(counties):
+def get_state_options(state):
     states = []
     print("RunningOP")
-    for data in counties:
+    for data in state:
         if data["State"] not in states:
             states.append(data["State"])
     options = ""
