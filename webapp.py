@@ -23,31 +23,21 @@ def render_first3():
 
 
         
-    if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(states), total_rate = total_rate(request.args['states']))
-    elif 'states' not in request.args:
-        return render_template('page2.html', states = get_state_options(states))
-    def get_state_options(states):
-        states = []
+   if 'states' in request.args:
+        return render_template('main.html', states = get_state_options(counties), average_age = average_age(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+   elif 'states' not in request.args and 'counties' not in request.args:
+        return render_template('main.html', states = get_state_options(counties))
+
+def get_state_options(counties):
+    states = []
     print("RunningOP")
-    for data in states:
+    for data in counties:
         if data["State"] not in states:
             states.append(data["State"])
     options = ""
     for data in states:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
-
-def total_rate(states):
-    print("RunningRate")
-    points = float(0)
-    total = float(0)
-    for state in states:
-        if state["State"] == state:
-            total = total + state["Total"]["Rate"]
-            points=points + 1
-    avg = float(total//points)
-    return avg
 
 if __name__ == "__main__":
     app.run(debug=True)
