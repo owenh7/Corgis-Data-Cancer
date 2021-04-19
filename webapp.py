@@ -23,10 +23,10 @@ def render_first3():
 
 
         
-if 'states' in request.args:
-    return render_template('page2.html', states = get_state_options(state))
-elif 'states' not in request.args:
-    return render_template('page2.html', states = get_state_options(state))
+    if 'states' in request.args:
+        return render_template('page2.html', states = get_state_options(state))
+    elif 'states' not in request.args:
+        return render_template('page2.html', states = get_state_options(state))
 
 def get_state_options(state):
     states = []
