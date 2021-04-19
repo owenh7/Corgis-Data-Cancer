@@ -24,9 +24,9 @@ def render_first3():
 
         
    if 'states' in request.args:
-        return render_template('main.html', states = get_state_options(counties), average_age = average_age(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), average_age = average_age(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
    elif 'states' not in request.args and 'counties' not in request.args:
-        return render_template('main.html', states = get_state_options(counties))
+        return render_template('page2.html', states = get_state_options(counties))
 
 def get_state_options(counties):
     states = []
