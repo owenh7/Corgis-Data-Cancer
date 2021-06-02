@@ -73,7 +73,7 @@ def get_state(issued, counties):
         if data["State"] == issued:
             state = data["State"]
     return state
-    return render_template('page2.html'))
+    return render_template('page2.html')
 
         
   
