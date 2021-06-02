@@ -21,13 +21,13 @@ def render_first2():
 def render_first3():
     return render_template('page3.html')
 with open('cancer.json') as cancer_data:
-        counties = json.load(cancer_data)
-    if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_awarded = get_issued_awarded(request.args['counties'],counties))
-    if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
-    elif 'states' not in request.args and 'counties' not in request.args:
-        return render_template('page2.html', states = get_state_options(counties))
+    counties = json.load(cancer_data)
+if 'counties' in request.args:
+    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_awarded = get_issued_awarded(request.args['counties'],counties))
+if 'states' in request.args:
+    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
+elif 'states' not in request.args and 'counties' not in request.args:
+     return render_template('page2.html', states = get_state_options(counties))
     
 
 def get_state_options(counties):
