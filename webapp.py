@@ -45,32 +45,32 @@ def Total_Rate(state, counties):
     print("RunningAge")
     points = float(0)
     total = float(0)
-    for issued in counties:
-        if issued["State"] == state:
-            total = issued["Total"]["Rate"]
+    for State in counties:
+        if State["State"] == state:
+            total = State["Total"]["Rate"]
     return total
 def get_State_options(states,counties):
-    issuedlist = []
+    Statelist = []
     print("RunningCOP")
-    for issued in counties:
-        if issued["State"] == states :
-            issuedlist.append(["State"])
+    for State in counties:
+        if State["State"] == states :
+            Statelist.append(["State"])
     options = ""
-    for data in issuedlist:
+    for data in Statelist:
         options = options + Markup("<option value=\"" + str(data) + "\">" + str(data) + "</option>")
     return options
     
-def get_Total_Rate(issued, counties):
+def get_Total_Rate(State, counties):
     print("RunningCAge")
-    for issued1 in counties:
-        if issued1["State"] == issued:
-            return issued1["Total"]["Rate"]
+    for State1 in counties:
+        if State1["State"] == State:
+            return State1["Total"]["Rate"]
  
-def get_state(issued, counties):
+def get_state(State, counties):
     print("RunningState")
     state = ""
     for data in counties:
-        if data["State"] == issued:
+        if data["State"] == State:
             state = data["State"]
     return state
     return render_template('page2.html')
