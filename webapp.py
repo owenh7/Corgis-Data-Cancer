@@ -23,11 +23,11 @@ def render_first3():
 with open('cancer.json') as cancer_data:
     counties = json.load(cancer_data)
 if 'counties' in request.args:
-    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(get_issued_state(request.args['counties'],counties), counties))
+    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(get_state(request.args['counties'],counties), counties), counties = get_State_options(get_state(request.args['counties'],counties),counties), Total_Rate = get_Total_Rate(request.args['counties'],counties))
 if 'states' in request.args:
-    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(request.args['states'], counties))
+    return render_template('page2.html', states = get_state_options(counties), Total_Rate = Total_Rate(request.args['states'], counties), counties = get_State_options(request.args['states'],counties))
 elif 'states' not in request.args and 'counties' not in request.args:
-     return render_template('page2.html', states = get_state_options(counties))
+    return render_template('page2.html', states = get_state_options(counties))
     
 
 def get_state_options(counties):
@@ -49,7 +49,31 @@ def Total_Rate(state, counties):
         if issued["State"] == state:
             total = issued["Total"]["Rate"]
     return total
-    return render_template('page2.html')
+def get_State_options(states,counties):
+    issuedlist = []
+    print("RunningCOP")
+    for issued in counties:
+        if issued["State"] == states :
+            issuedlist.append(["State"])
+    options = ""
+    for data in issuedlist:
+        options = options + Markup("<option value=\"" + str(data) + "\">" + str(data) + "</option>")
+    return options
+    
+def get_Total_Rate(issued, counties):
+    print("RunningCAge")
+    for issued1 in counties:
+        if issued1["State"] == issued:
+            return issued1["Total"]["Rate"]
+ 
+def get_state(issued, counties):
+    print("RunningState")
+    state = ""
+    for data in counties:
+        if data["State"] == issued:
+            state = data["State"]
+    return state
+    return render_template('page2.html'))
 
         
   
