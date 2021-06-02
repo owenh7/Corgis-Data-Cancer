@@ -23,21 +23,7 @@ def render_first3():
 
 
         
-    if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(state))
-    elif 'states' not in request.args:
-        return render_template('page2.html', states = get_state_options(state))
-
-def get_state_options(state):
-    states = []
-    print("RunningOP")
-    for data in state:
-        if data["State"] not in states:
-            states.append(data["State"])
-    options = ""
-    for data in states:
-        options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
-    return options
+  
 
 if __name__ == "__main__":
     app.run(debug=True)
